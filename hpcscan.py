@@ -11,16 +11,16 @@ def update():
     subprocess.call('./upgrade.sh', cwd=os.getcwd()+'/extensions/')
     sys.exit(0)
 
-def main(argv):
+def main():
 
     try:
-        opts, args = getopt.getopt("u", ["update"])
+        opts, args = getopt.getopt(sys.argv[1:], 'u', ['update'])
     except getopt.GetoptError:
         print "Error. Exiting."
         sys.exit(2)
 
     for opt, arg in opts:
-        if opt in ("-u", "--update"):
+        if opt in ('-u', '--update'):
             update()
 
 
@@ -34,5 +34,4 @@ def main(argv):
         exec '%s = profiles.%s.%s()' % (module, module, module)
         exec 'print %s.greet' % module
 
-main(sys.argv)
-update()
+main()
