@@ -13,5 +13,7 @@ for word in profiles.__all__:
 
 print ""
 
-vir = flashcache.flashcache()
-print vir.greet
+for module in profiles.__all__:
+    exec '%s = %s.%s()' % (module, module, module)
+
+print flashcache.greet
