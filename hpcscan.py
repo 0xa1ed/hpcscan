@@ -8,7 +8,7 @@ import os, sys, subprocess, getopt, profiles
 #from profiles import *
 
 def update():
-    subprocess.call('upgrade.sh', cwd='~/hpcscan/extensions/')
+    subprocess.call('./upgrade.sh', cwd=os.getcwd()+'/extensions/')
     sys.exit(0)
 
 def main(argv):
