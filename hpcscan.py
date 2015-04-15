@@ -8,12 +8,11 @@ import os, sys, profiles
 from profiles import *
 
 print "Modules loaded:",
-for word in profiles.__all__:
-    print word,
+for module in profiles.__all__:
+    print module,
 
 print ""
 
 for module in profiles.__all__:
     exec '%s = %s.%s()' % (module, module, module)
-
-print flashcache.greet
+    exec 'print %s.greet' % module
