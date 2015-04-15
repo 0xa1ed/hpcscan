@@ -1,3 +1,5 @@
+#!/bin/sh
+
 printf "Upgrading HPCScan.\n"
 cd ~/hpcscan
 if git pull --rebase --stat origin master
