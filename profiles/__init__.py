@@ -1,3 +1,5 @@
-__all__ = ['flashcache']
+__all__ = ['flashcache', 'zeve', 'mailvir']
 
 import flashcache
+import zeve
+import mailvir

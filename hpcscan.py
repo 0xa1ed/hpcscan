@@ -13,6 +13,7 @@ def usage():
     print "Options include:"
     print "\t-u (--update):\t\t\t\t updates the application from github repo"
     print "\t-f <filename> (--file <filename>):\t specifies the file to be analysed"
+    print "\t-h (--help):\t\t\t\t displays this usage dialog"
     
 
 def update():
@@ -61,4 +62,5 @@ def main():
 
     log.close()
 
-main()
+if __name__ == "__main__":
+    main()
