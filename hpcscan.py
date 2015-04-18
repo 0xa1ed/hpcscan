@@ -4,8 +4,49 @@
 # Description: An utility to look at Capture-HPC logs and determine if a particular set of logs
 #              displays malicious actions by comparing it to profiles of logs already determined
 #              to be malicious. This is under active development and is not for production use yet. 
-import os, sys, subprocess, getopt, profiles
-#from profiles import *
+import os, sys, subprocess, getopt, profiles, csv
+
+def scan(log):
+    reader = csv.reader(log)
+    for line in reader:
+        if not line:
+            pass
+        elif line[0] == "process":
+            if line[3] == "created":
+                for prof in profs:
+                    for proc in prof.procstart:
+                        if line[4] == proc:
+                            prof.score += 1
+            elif line[3] == "terminated":
+                for prof in profs:
+                    for proc in prof.procterm:
+                        if line[4] == proc:
+                            prof.score +=1
+        elif line[0] == "registry":
+            if line[3] == "SetValueKey":
+                for prof in profs:
+                    for reg in prof.regset:
+                        if line[4] == reg:
+                            prof.score += 1
+            elif line[3] == "DeleteValueKey":
+                for prof in profs:
+                    for reg in prof.regdel:
+                        if line[4] == reg:
+                            prof.score += 1
+        elif line[0] == "file":
+            if line[3] == "Write":
+                for prof in profs:
+                    for f in prof.filewrite:
+                        if line[4] == f:
+                            prof.score += 1
+            elif line[3] == "Delete":
+                for prof in profs:
+                    for f in prof.filedel:
+                        if line[4] == f:
+                            prof.score += 1
+                
+    for prof in profs:
+        print prof.score
 
 def usage():
     print "Help for hpcscan.py:"
@@ -48,19 +89,21 @@ def main():
             usage()
             exit(0)
         else:
-            print "Unparsed argument."
+            print "Error: Unparsed argument."
             exit(1)
 
-    print "Checking loaded modules..."
+    print "Checking loaded modules...",
     for module in profiles.__all__:
         print module,
     print ""
 
-    for module in profiles.__all__:
-        exec '%s = profiles.%s.%s()' % (module, module, module)
-        exec 'print %s.greet' % module
-
+    scan(log)
     log.close()
+
+profs = []
+for module in profiles.__all__:
+    exec '%s = profiles.%s.%s()' % (module, module, module)
+    exec 'profs.append(%s)' % (module)
 
 if __name__ == "__main__":
     main()

@@ -1,4 +1,10 @@
 class flashcache:
     def __init__(self):
-        self.greet = "This is the Adobe Flash Cache Profile"
-        self.array = ["hello"]
+        self.procstart = []
+        self.procterm = []
+        self.regset = []
+        self.regdel = []
+        self.filewrite = ['.sxx']
+        self.filedel = []
+        self.score = 0
+

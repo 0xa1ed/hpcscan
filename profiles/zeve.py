@@ -1,5 +1,9 @@
 class zeve:
     def __init__(self):
-        self.greet = "zeve module here."
-        self.filewrite = [".sxx"]
+        self.procstart = []
+        self.procterm = []
+        self.regset = []
+        self.regdel = []
+        self.filewrite = []
+        self.filedel = []
         self.score = 0

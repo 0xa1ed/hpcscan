@@ -1,4 +1,9 @@
 class mailvir:
     def __init__(self):
-        self.greet = "mailvir module here."
-        self.array = ["hello"]
+        self.procstart = []
+        self.procterm = []
+        self.regset = []
+        self.regdel = []
+        self.filewrite = []
+        self.filedel = []
+        self.score = 0
