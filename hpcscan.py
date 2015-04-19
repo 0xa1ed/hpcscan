@@ -6,10 +6,22 @@
 #              to be malicious. This is under active development and is not for production use yet. 
 import os, sys, subprocess, getopt, profiles, csv
 
+def reset():
+    for prof in profs:
+        prof.score = 0
+
 def scan(log):
     reader = csv.reader(log)
     for line in reader:
         if not line:
+            t_score = 0
+            for prof in profs:
+                if prof.score > t_score:
+                    t_score = prof.score
+                    print "%d larger than %d - replacing." % (prof.score, t_score)
+                    t_prof = str(prof)
+                    print t_prof
+            reset()
             pass
         elif line[0] == "process":
             if line[3] == "created":
@@ -45,8 +57,13 @@ def scan(log):
                         if line[4] == f:
                             prof.score += 1
                 
+    t_score = 0
     for prof in profs:
-        print prof.score
+        if prof.score > t_score:
+            print "%d larger than %d - replacing" % (prof.score, t_score)
+            t_prof = str(prof)
+            t_score = prof.score
+            print t_prof
 
 def usage():
     print "Help for hpcscan.py:"
