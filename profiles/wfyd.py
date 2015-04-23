@@ -46,3 +46,9 @@ class wfyd:
                 'C:\Users\mp\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\\ndjgkxqc.exe']
         self.filedel = ['C:\Users\mp\Desktop\currently supported']
         self.score = 0
+        self.accuracy = 0
+        self.origorder = []
+        self.outbuff = []
+
+    def getacc():
+        return accuracy
