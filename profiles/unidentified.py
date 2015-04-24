@@ -9,7 +9,7 @@ class unidentified:
         self.score = 0
         self.accuracy = 0
         self.origorder = []
-        self.outbuffer = []
+        self.outbuff = []
 
     def getacc():
         return accuracy
