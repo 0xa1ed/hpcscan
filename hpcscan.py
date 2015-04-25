@@ -17,37 +17,48 @@ def reset():
             t_prof = str(prof)
             t_profraw = prof
             t_score = prof.score
-        for key, val in scores.iteritems():
-            if key in t_prof:
+            accuracy = t_profraw.getacc()
+            prof.score = 0
+            del prof.outbuff[:]
+    for key, val in scores.iteritems():
+        if key in t_prof: 
+            if accuracy > 50:
                 scores[key] += 1
-        prof.score = 0
+                accuracy = 0
+            else:
+                scores['unidentified'] += 1
+                accuracy = 0
 
 def scan(log):
     reader = csv.reader(log)
-    curr_line = 0
-    prev_line = 0
+    curr_line = '' 
+    prev_line = ''
     for line in reader:
-        prev_line = curr_line
         if not line:
             reset()
-            prev_line = 0
-            curr_line = 0
-            #pass
+            prev_line = ''
+            curr_line = ''
         elif line[0] == "process":
             curr_line = '"' + line[2] + '","' + line[3] + '","' + line[4] + '","' + line[5] + '"'
             if line[3] == "created":
                 for prof in profs:
                     for proc in prof.procstart:
-                        if line[4] == proc:
+                        if line[5] == proc:
                             if curr_line != prev_line:
                                 prof.outbuff.append(curr_line)
+                                prev_line = curr_line
+                            else:
+                                pass
                             prof.score += 1
             elif line[3] == "terminated":
                 for prof in profs:
                     for proc in prof.procterm:
-                        if line[4] == proc:
+                        if line[5] == proc:
                             if curr_line != prev_line:
                                 prof.outbuff.append(curr_line)
+                                prev_line = curr_line
+                            else:
+                                pass
                             prof.score += 1
         elif line[0] == "registry":
             curr_line = '"' + line[2] + '","' + line[3] + '","' + line[4] + '"'
@@ -57,6 +68,9 @@ def scan(log):
                         if line[4] == reg:
                             if curr_line != prev_line:
                                 prof.outbuff.append(curr_line)
+                                prev_line = curr_line
+                            else:
+                                pass
                             prof.score += 1
             elif line[3] == "DeleteValueKey":
                 for prof in profs:
@@ -64,6 +78,9 @@ def scan(log):
                         if line[4] == reg:
                             if curr_line != prev_line:
                                 prof.outbuff.append(curr_line)
+                                prev_line = curr_line
+                            else:
+                                pass
                             prof.score += 1
         elif line[0] == "file":
             curr_line = '"' + line[2] + '","' + line[3] + '","' + line[4] + '"'
@@ -75,13 +92,21 @@ def scan(log):
                         elif line[4] == f:
                             if curr_line != prev_line:
                                 prof.outbuff.append(curr_line)
+                                prev_line = curr_line
+                            else:
+                                pass
                             prof.score += 1
+                        else:
+                            pass
             elif line[3] == "Delete":
                 for prof in profs:
                     for f in prof.filedel:
                         if line[4] == f:
                             if curr_line != prev_line:
                                 prof.outbuff.append(curr_line)
+                                prev_line = curr_line
+                            else:
+                                pass
                             prof.score += 1
                 
     reset()

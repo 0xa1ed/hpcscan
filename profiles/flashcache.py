@@ -11,7 +11,7 @@ class flashcache:
         self.origorder = []
         self.outbuff = []
 
-    def getacc():
+    def getacc(self):
         accuracy = 100
         return accuracy
 

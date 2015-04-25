@@ -11,5 +11,5 @@ class template:
         self.origorder = []
         self.outbuff = []
 
-    def getacc():
+    def getacc(self):
         return accuracy

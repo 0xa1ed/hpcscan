@@ -7,9 +7,11 @@ class wfyd:
                 'C:\Users\mp\AppData\Local\Temp\KB00147241.exe']
         self.regset = ['HKCU\Software\Microsoft\Internet Explorer\LowRegistry\ErrorReporting\LastShipAssertTime',
                 'HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer\Run\\1545094860',
+                'HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer\Run\\1545094860',
                 'HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer\TaskbarNoNotification',
                 'HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer\TaskbarNoNotification',
                 'HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer\HideSCAHealth',
+                'HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer\HideSCAHealth',
                 'HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\UAC_bypassed',
                 'HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System\EnableLUA',
                 'HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced\ShowSuperHidden',
@@ -32,7 +34,8 @@ class wfyd:
                 'HKLM\SYSTEM\ControlSet001\services\MpsSvc\Start',
                 'HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon\Userinit']
         self.regdel = ['HKCU\Software\Microsoft\Windows\CurrentVersion\Run\\1545094860',
-                'HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run\Windows Defender']
+                'HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run\Windows Defender',
+                'HKCU\Software\Microsoft\Windows\CurrentVersion\Run\internat.exe']
         self.filewrite = ['C:\Users\mp\AppData\Local\Temp\wfyd.dll',
                 'C:\Windows',
                 'C:\Windows\System32\config\SOFTWARE.LOG1',
@@ -46,8 +49,8 @@ class wfyd:
                 'C:\Users\mp\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\\ndjgkxqc.exe']
         self.filedel = ['C:\Users\mp\Desktop\currently supported']
         self.score = 0
-        self.accuracy = 0
-        self.origorder = ['"C:\Program Files\Internet Explorer\iexplore.exe","SetValueKey","HKCU\Software\Microsoft\Internet Explorer\LowRegistry\ErrorReporting\LastShipAssertTime"',
+        self.accuracy = 0.0
+        self.origorder = [#'"C:\Program Files\Internet Explorer\iexplore.exe","SetValueKey","HKCU\Software\Microsoft\Internet Explorer\LowRegistry\ErrorReporting\LastShipAssertTime"',
                 '"C:\Program Files\Internet Explorer\iexplore.exe","Write","C:\Users\mp\AppData\Local\Temp\wfyd.dll"',
                 '"C:\Program Files\Internet Explorer\iexplore.exe","created","2980","C:\Users\mp\AppData\Local\Temp\wfyd.dll"',
                 '"C:\Users\mp\AppData\Local\Temp\wfyd.dll","created","2992","C:\Users\mp\AppData\Local\Temp\wfyd.dll"',
@@ -61,7 +64,9 @@ class wfyd:
                 '"C:\Windows\System32\msiexec.exe","SetValueKey","HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer\Run\\1545094860"',
                 '"C:\Windows\System32\msiexec.exe","Write","C:\Windows\System32\config\SOFTWARE"',
                 '"C:\Windows\System32\msiexec.exe","SetValueKey","HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer\TaskbarNoNotification"',
+                '"C:\Windows\System32\msiexec.exe","SetValueKey","HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer\TaskbarNoNotification"',
                 '"C:\Windows\System32\msiexec.exe","SetValueKey","HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer\HideSCAHealth"',
+                '"C:\Windows\System32\msiexec.exe","SetValueKey","HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer\HideSCAHealth"',
                 '"C:\Windows\System32\services.exe","Write","C:\Windows\System32\config"',
                 '"C:\Windows\System32\services.exe","Write","C:\\"',
                 '"C:\Windows\System32\services.exe","Write","C:\Windows\System32\config\SYSTEM.LOG1"',
@@ -87,10 +92,12 @@ class wfyd:
                 '"C:\Users\mp\AppData\Local\Temp\KB00147241.exe","SetValueKey","HKLM\SOFTWARE\Microsoft\Security Center\AntiVirusDisableNotify"',
                 '"C:\Users\mp\AppData\Local\Temp\KB00147241.exe","SetValueKey","HKLM\SOFTWARE\Microsoft\Security Center\FirewallDisableNotify"',
                 '"C:\Users\mp\AppData\Local\Temp\KB00147241.exe","SetValueKey","HKLM\SOFTWARE\Microsoft\Security Center\FirewallOverride"',
+                '"C:\Users\mp\AppData\Local\Temp\KB00147241.exe","SetValueKey","HKLM\SOFTWARE\Microsoft\Security Center\UpdatesDisableNotify"',
                 '"C:\Users\mp\AppData\Local\Temp\KB00147241.exe","SetValueKey","HKLM\SOFTWARE\Microsoft\Security Center\UacDisableNotify"',
                 '"C:\Windows\System32\\taskhost.exe","DeleteValueKey","HKCU\Software\Microsoft\Windows\CurrentVersion\Run\internat.exe"',
                 '"C:\Users\mp\AppData\Local\Temp\KB00147241.exe","SetValueKey","HKLM\SYSTEM\ControlSet001\services\wscsvc\Start"',
                 '"C:\Users\mp\AppData\Local\Temp\KB00147241.exe","SetValueKey","HKLM\SYSTEM\ControlSet001\services\SharedAccess\Parameters\FirewallPolicy\StandardProfile\EnableFirewall"',
+                '"C:\Users\mp\AppData\Local\Temp\KB00147241.exe","SetValueKey","HKLM\SYSTEM\ControlSet001\services\SharedAccess\Parameters\FirewallPolicy\StandardProfile\DoNotAllowExceptions"',
                 '"C:\Users\mp\AppData\Local\Temp\KB00147241.exe","SetValueKey","HKLM\SYSTEM\ControlSet001\services\SharedAccess\Parameters\FirewallPolicy\StandardProfile\DisableNotifications"',
                 '"C:\Users\mp\AppData\Local\Temp\KB00147241.exe","SetValueKey","HKLM\SYSTEM\ControlSet001\services\wscsvc\Start"',
                 '"C:\Users\mp\AppData\Local\Temp\KB00147241.exe","Delete","C:\Users\mp\Desktop\currently supported"',
@@ -111,19 +118,24 @@ class wfyd:
                 '"C:\Windows\System32\msiexec.exe","terminated","3212","C:\Users\mp\AppData\Local\Temp\KB00147241.exe"']
         self.outbuff = []
 
-    def getacc():
-        accscore = 0
-        if len(outbuff) == 0:
-            accuracy = 100
-            return accuracy
+    def getacc(self):
+        accscore = 0.0
+        if not self.outbuff or not self.origorder:
+            return 0 
         else:
-            for i in range(0, len(outbuff)):
-                if i > len(outbuff) or i > len(origorder):
-                    break
-                else:
-                    if outbuff[i] == origorder[i]:
+           # print self.outbuff[0]
+            for i in range(0, len(self.outbuff)):
+                if i < len(self.origorder):
+                #    print "comparing " + self.outbuff[i] + " and " + self.origorder[i]
+                    if self.outbuff[i] == self.origorder[i]:
+                 #       print "match"
                         accscore += 1
                     else:
                         pass
-        accuracy = accscore / len(origorder) * 100
-        return accuracy
+                else:
+                    break
+        if accscore == 0:
+            return 0
+        else:
+            self.accuracy = accscore / len(self.origorder) * 100
+        return self.accuracy

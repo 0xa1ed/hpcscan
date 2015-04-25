@@ -128,19 +128,20 @@ class mailvir:
         self.origorder = []
         self.outbuff = []
 
-    def getacc():
+    def getacc(self):
         accscore = 0
-        if len(outbuff) == 0:
-            accuracy = 100
-            return accuracy
+        if not self.outbuff or not self.origorder:
+            self.accuracy = 0
+            return self.accuracy
         else:
-            for i in range(0, len(outbuff)):
-                if i > len(outbuff) or i > len(origorder):
+            for i in range(0, len(self.outbuff)):
+                if i > len(self.outbuff) or i > len(self.origorder):
                     break
                 else:
-                    if outbuff[i] == origorder[i]:
+                    print i
+                    if self.outbuff[i] == self.origorder[i]:
                         accscore += 1
                     else:
                         pass
-        accuracy = accscore / len(origorder) * 100
-        return accuracy
+        self.accuracy = accscore / len(self.origorder) * 100
+        return 0 
