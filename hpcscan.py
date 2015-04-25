@@ -10,9 +10,10 @@ def reset():
     t_score = 0
     t_prof = ''
     t_profraw = 0
+    accuracy = 0
     for prof in profs:
         if prof.score > t_score:
-            #print "%d larger than %d - replacing" % (prof.score, t_score)
+#            print "%d larger than %d - replacing" % (prof.score, t_score)
             t_prof = str(prof)
             t_profraw = prof
             t_score = prof.score
@@ -23,45 +24,64 @@ def reset():
 
 def scan(log):
     reader = csv.reader(log)
+    curr_line = 0
+    prev_line = 0
     for line in reader:
+        prev_line = curr_line
         if not line:
             reset()
-            pass
+            prev_line = 0
+            curr_line = 0
+            #pass
         elif line[0] == "process":
+            curr_line = '"' + line[2] + '","' + line[3] + '","' + line[4] + '","' + line[5] + '"'
             if line[3] == "created":
                 for prof in profs:
                     for proc in prof.procstart:
                         if line[4] == proc:
+                            if curr_line != prev_line:
+                                prof.outbuff.append(curr_line)
                             prof.score += 1
             elif line[3] == "terminated":
                 for prof in profs:
                     for proc in prof.procterm:
                         if line[4] == proc:
+                            if curr_line != prev_line:
+                                prof.outbuff.append(curr_line)
                             prof.score += 1
         elif line[0] == "registry":
+            curr_line = '"' + line[2] + '","' + line[3] + '","' + line[4] + '"'
             if line[3] == "SetValueKey":
                 for prof in profs:
                     for reg in prof.regset:
                         if line[4] == reg:
+                            if curr_line != prev_line:
+                                prof.outbuff.append(curr_line)
                             prof.score += 1
             elif line[3] == "DeleteValueKey":
                 for prof in profs:
                     for reg in prof.regdel:
                         if line[4] == reg:
+                            if curr_line != prev_line:
+                                prof.outbuff.append(curr_line)
                             prof.score += 1
         elif line[0] == "file":
+            curr_line = '"' + line[2] + '","' + line[3] + '","' + line[4] + '"'
             if line[3] == "Write":
-                if '.sxx' in line[4]:
-                    flashcache.score += 10
-                    pass
                 for prof in profs:
                     for f in prof.filewrite:
-                        if line[4] == f:
+                        if '.sxx' in line[4]:
+                            flashcache.score += 10
+                        elif line[4] == f:
+                            if curr_line != prev_line:
+                                prof.outbuff.append(curr_line)
                             prof.score += 1
             elif line[3] == "Delete":
                 for prof in profs:
                     for f in prof.filedel:
                         if line[4] == f:
+                            if curr_line != prev_line:
+                                prof.outbuff.append(curr_line)
                             prof.score += 1
                 
     reset()
