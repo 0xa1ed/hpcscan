@@ -1,7 +1,6 @@
-__all__ = ['flashcache', 'zeve', 'mailvir', 'wfyd', 'unidentified']
+__all__ = ['flashcache', 'mailvir', 'wfyd', 'unidentified']
 
 import flashcache
-import zeve
 import mailvir
 import wfyd
 import unidentified
