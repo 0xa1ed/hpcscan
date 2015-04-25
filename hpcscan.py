@@ -13,7 +13,6 @@ def reset():
     accuracy = 0
     for prof in profs:
         if prof.score > t_score:
-#            print "%d larger than %d - replacing" % (prof.score, t_score)
             t_prof = str(prof)
             t_profraw = prof
             t_score = prof.score
@@ -24,10 +23,8 @@ def reset():
         if key in t_prof: 
             if accuracy > 50:
                 scores[key] += 1
-                accuracy = 0
             else:
                 scores['unidentified'] += 1
-                accuracy = 0
 
 def scan(log):
     reader = csv.reader(log)
