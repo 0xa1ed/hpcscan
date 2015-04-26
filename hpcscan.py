@@ -4,27 +4,82 @@
 # Description: An utility to look at Capture-HPC logs and determine if a particular set of logs
 #              displays malicious actions by comparing it to profiles of logs already determined
 #              to be malicious. This is under active development and is not for production use yet. 
-import os, sys, subprocess, getopt, profiles, csv
+import os, sys, subprocess, getopt, profiles, csv, time
 
-def reset():
+def endwrite():
+    outfile = open(outname, "r")
+    lines = outfile.readlines()
+    outfile.close()
+   
+    outfile = open(outname, "w")
+    outfile.write("HPCScan Log for " + str(time.strftime("%d/%m/%Y")) + ":\n\n") 
+    for key, val in scores.iteritems():
+        outfile.write(str(key) + " occurrences: " + str(val) + "\n")
+    outfile.write("\n" + "Details for suspected malicious matches:" + "\n")
+
+    for line in lines:
+        outfile.write(line)
+
+    outfile.close()
+
+def interwrite(prof):
+    if 'flashcache' in str(prof):
+        pass
+    else:
+        timestamp = str(time.strftime("%d%m%Y"))
+        global outname
+        outname = timestamp + 'outfile.txt' 
+        if not os.path.exists(outname):
+            outfile = open(outname, "w")
+            for key, val in scores.iteritems():
+                if key in str(prof):
+                    outfile.write("=====================================================\n")
+                    outfile.write(key + " instance:\n")
+                    outfile.write("=====================================================\n\n")
+                    for line in prof.outbuff:
+                        if line == "0":
+                            pass
+                        else:
+                            outfile.write(line + "\n")
+                    outfile.write("\n\n")
+                    outfile.close()
+        else:
+            outfile = open(outname, "a+")
+            for key, val in scores.iteritems():
+                if key in str(prof):
+                    outfile.write("=====================================================\n")
+                    outfile.write(key + " instance:\n")
+                    outfile.write("=====================================================\n\n")
+                    for line in prof.outbuff:
+                        if line == "0":
+                            pass
+                        else:
+                            outfile.write(line + "\n")
+                    outfile.write("\n\n")
+                    outfile.close()
+
+
+def save():
     t_score = 0
     t_prof = ''
-    t_profraw = 0
-    accuracy = 0
+    t_profraw = profs[0] 
     for prof in profs:
         if prof.score > t_score:
             t_prof = str(prof)
             t_profraw = prof
             t_score = prof.score
-            accuracy = t_profraw.getacc()
-            prof.score = 0
-            del prof.outbuff[:]
+    accuracy = t_profraw.getacc()
     for key, val in scores.iteritems():
-        if key in t_prof: 
+        if key in t_prof:
             if accuracy > 50:
                 scores[key] += 1
+                interwrite(t_profraw)
             else:
                 scores['unidentified'] += 1
+def reset():
+    for prof in profs:
+        prof.score = 0
+        del prof.outbuff[:]
 
 def scan(log):
     reader = csv.reader(log)
@@ -32,6 +87,7 @@ def scan(log):
     prev_line = ''
     for line in reader:
         if not line:
+            save()
             reset()
             prev_line = ''
             curr_line = ''
@@ -106,7 +162,9 @@ def scan(log):
                                 pass
                             prof.score += 1
                 
+    save()
     reset()
+    endwrite()
     print scores
 
 def usage():
@@ -117,7 +175,6 @@ def usage():
     print "\t-f <filename> (--file <filename>):\t specifies the file to be analysed"
     print "\t-h (--help):\t\t\t\t displays this usage dialog"
     
-
 def update():
     subprocess.call('./upgrade.sh', cwd=os.getcwd()+'/extensions/')
     sys.exit(0)

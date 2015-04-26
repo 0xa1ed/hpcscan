@@ -31,7 +31,7 @@ class mailvir:
                 'HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\\4\\1A05',
                 'HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\\4\\1A06',
                 'HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Lockdown_Zones\\0\\1609'
-                'HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\WarnonBadCertRecving'
+                'HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\WarnonBadCertRecving',
                 'HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\EnableSPDY3_0',
                 'HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\UNCAsIntranet',
                 'HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\AutoDetect',
@@ -156,7 +156,7 @@ class mailvir:
                 '"C:\Windows\System32\svchost.exe","created","3164","C:\Program Files\Windows Mail\WinMail.exe"',
                 '"C:\Program Files\Internet Explorer\iexplore.exe","Write","C:\Users\mp\AppData\Local\Temp\BHDG.dll"',
                 '"C:\Windows\explorer.exe","SetValueKey","HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\\3\\1406"',
-                #'"C:\Windows\explorer.exe","SetValueKey","HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Lockdown_Zones\0\\1609"',
+                '"C:\Windows\explorer.exe","SetValueKey","HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Lockdown_Zones\\0\\1609"',
                 '"C:\Windows\explorer.exe","SetValueKey","HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\\1\\1609"',
                 '"C:\Windows\explorer.exe","SetValueKey","HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\\4\\1A02"',
                 '"C:\Windows\explorer.exe","SetValueKey","HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\\2\\1A10"',
@@ -165,8 +165,8 @@ class mailvir:
                 '"C:\Windows\explorer.exe","SetValueKey","HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\\3\\1A05"',
                 '"C:\Windows\explorer.exe","SetValueKey","HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\\4\\1A05"',
                 '"C:\Windows\explorer.exe","SetValueKey","HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\\4\\1A06"',
-                #'"C:\Windows\explorer.exe","SetValueKey","HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\WarnonBadCertRecving"',
-                #'"C:\Windows\explorer.exe","SetValueKey","HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\EnableSPDY3_0"',
+                '"C:\Windows\explorer.exe","SetValueKey","HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\WarnonBadCertRecving"',
+                '"C:\Windows\explorer.exe","SetValueKey","HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\EnableSPDY3_0"',
                 '"C:\Windows\System32\\taskhost.exe","DeleteValueKey","HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\ProxyBypass"',
                 '"C:\Windows\System32\\taskhost.exe","DeleteValueKey","HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\ProxyBypass"',
                 '"C:\Windows\System32\\taskhost.exe","DeleteValueKey","HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\IntranetName"',
@@ -180,8 +180,8 @@ class mailvir:
                 '"C:\Windows\System32\\taskhost.exe","SetValueKey","HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\UNCAsIntranet"',
                 '"C:\Windows\System32\\taskhost.exe","SetValueKey","HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\AutoDetect"',
                 '"C:\Windows\System32\\taskhost.exe","SetValueKey","HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\\0\\1609"',
-                #'"C:\Windows\System32\\taskhost.exe","SetValueKey","HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\WarnonBadCertRecving"',
-                #'"C:\Windows\System32\taskhost.exe","SetValueKey","HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\EnableSPDY3_0"',
+                '"C:\Windows\System32\\taskhost.exe","SetValueKey","HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\WarnonBadCertRecving"',
+                '"C:\Windows\System32\\taskhost.exe","SetValueKey","HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\EnableSPDY3_0"',
                 '"C:\Windows\explorer.exe","SetValueKey","HKCU\Software\Microsoft\Nylaiw\Fauzwua"',
                 '"C:\Windows\explorer.exe","SetValueKey","HKCU\Software\Microsoft\Nylaiw\Upcaolap"',
                 '"C:\Windows\System32\\taskhost.exe","SetValueKey","HKCU\Software\Microsoft\Nylaiw\Fauzwua"',
@@ -205,8 +205,8 @@ class mailvir:
                 '"C:\Program Files\Capture\CaptureClient.exe","DeleteValueKey","HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\IntranetName"',
                 '"C:\Program Files\Capture\CaptureClient.exe","SetValueKey","HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\UNCAsIntranet"',
                 '"C:\Program Files\Capture\CaptureClient.exe","SetValueKey","HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\AutoDetect"',
-                #'"C:\Program Files\Capture\CaptureClient.exe","SetValueKey","HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\WarnonBadCertRecving"',
-                #'"C:\Program Files\Capture\CaptureClient.exe","SetValueKey","HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\EnableSPDY3_0"',
+                '"C:\Program Files\Capture\CaptureClient.exe","SetValueKey","HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\WarnonBadCertRecving"',
+                '"C:\Program Files\Capture\CaptureClient.exe","SetValueKey","HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\EnableSPDY3_0"',
                 '"C:\Program Files\Capture\CaptureClient.exe","SetValueKey","HKCU\Software\Microsoft\Nylaiw\Fauzwua"',
                 '"C:\Program Files\Internet Explorer\iexplore.exe","SetValueKey","HKCU\Software\Microsoft\Nylaiw\Fauzwua"',
                 '"C:\Users\mp\AppData\Local\Temp\BHDG.dll","DeleteValueKey","HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\ProxyBypass"',
@@ -221,8 +221,8 @@ class mailvir:
                 '"C:\Users\mp\AppData\Local\Temp\BHDG.dll","DeleteValueKey","HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\IntranetName"',
                 '"C:\Users\mp\AppData\Local\Temp\BHDG.dll","SetValueKey","HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\UNCAsIntranet"',
                 '"C:\Users\mp\AppData\Local\Temp\BHDG.dll","SetValueKey","HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\AutoDetect"',
-                #'"C:\Users\mp\AppData\Local\Temp\BHDG.dll","SetValueKey","HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\WarnonBadCertRecving"',
-                #'"C:\Users\mp\AppData\Local\Temp\BHDG.dll","SetValueKey","HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\EnableSPDY3_0"',
+                '"C:\Users\mp\AppData\Local\Temp\BHDG.dll","SetValueKey","HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\WarnonBadCertRecving"',
+                '"C:\Users\mp\AppData\Local\Temp\BHDG.dll","SetValueKey","HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\EnableSPDY3_0"',
                 '"C:\Users\mp\AppData\Local\Temp\BHDG.dll","SetValueKey","HKCU\Software\Microsoft\Nylaiw\Fauzwua"',
                 '"C:\Program Files\Windows Mail\WinMail.exe","SetValueKey","HKCU\Software\Microsoft\IAM\Accounts\ConnectionSettingsMigrated"',
                 '"C:\Program Files\Windows Mail\WinMail.exe","SetValueKey","HKCU\Software\Microsoft\Windows Mail\Trident\Main\Move System Caret"',
@@ -242,12 +242,12 @@ class mailvir:
                 '"C:\Program Files\Windows Mail\WinMail.exe","SetValueKey","HKCU\Identities\Identity Ordinal"',
                 '"C:\Program Files\Windows Mail\WinMail.exe","SetValueKey","HKCU\Software\Microsoft\Windows Mail\LastBackup"',
                 '"C:\Program Files\Windows Mail\WinMail.exe","Write","C:\Users\mp\AppData\Local\Microsoft\Windows Mail\edb.log"',
-                #'"C:\Program Files\Windows Mail\WinMail.exe","Write","C:\Users\mp\AppData\Local\Microsoft\Windows Mail\WindowsMail.MSMessageStore"',
-                #'"C:\Program Files\Windows Mail\WinMail.exe","Write","C:\Users\mp\AppData\Local\Microsoft\Windows Mail\Backup\\temp\WindowsMail.MSMessageStore"',
+                '"C:\Program Files\Windows Mail\WinMail.exe","Write","C:\Users\mp\AppData\Local\Microsoft\Windows Mail\WindowsMail.MSMessageStore"',
+                '"C:\Program Files\Windows Mail\WinMail.exe","Write","C:\Users\mp\AppData\Local\Microsoft\Windows Mail\Backup\\temp\WindowsMail.MSMessageStore"',
                 '"C:\Program Files\Windows Mail\WinMail.exe","Write","C:\Users\mp\AppData\Local\Microsoft\Windows Mail\\tmp.edb"',
                 '"C:\Program Files\Windows Mail\WinMail.exe","Write","C:\Users\mp\AppData\Local\Microsoft\Windows Mail\edb.log"',
                 '"C:\Program Files\Windows Mail\WinMail.exe","Write","C:\Users\mp\AppData\Local\Microsoft\Windows Mail\WindowsMail.MSMessageStore"',
-                #'"C:\Program Files\Windows Mail\WinMail.exe","Write","C:\Users\mp\AppData\Local\Microsoft\Windows Mail\WindowsMail.pat"',
+                '"C:\Program Files\Windows Mail\WinMail.exe","Write","C:\Users\mp\AppData\Local\Microsoft\Windows Mail\WindowsMail.pat"',
                 '"C:\Program Files\Windows Mail\WinMail.exe","Write","C:\Users\mp\AppData\Local\Microsoft\Windows Mail\Backup\\temp\WindowsMail.MSMessageStore"',
                 '"C:\Program Files\Windows Mail\WinMail.exe","Write","C:\Users\mp\AppData\Local\Microsoft\Windows Mail\edb.log"',
                 '"C:\Program Files\Windows Mail\WinMail.exe","Write","C:\Users\mp\AppData\Local\Microsoft\Windows Mail\edbtmp.log"',
@@ -265,8 +265,8 @@ class mailvir:
                 '"C:\Windows\System32\dwm.exe","DeleteValueKey","HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\IntranetName"',
                 '"C:\Windows\System32\dwm.exe","SetValueKey","HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\UNCAsIntranet"',
                 '"C:\Windows\System32\dwm.exe","SetValueKey","HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\AutoDetect"',
-                #'"C:\Windows\System32\dwm.exe","SetValueKey","HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\WarnonBadCertRecving"',
-                #'"C:\Windows\System32\dwm.exe","SetValueKey","HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\EnableSPDY3_0"',
+                '"C:\Windows\System32\dwm.exe","SetValueKey","HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\WarnonBadCertRecving"',
+                '"C:\Windows\System32\dwm.exe","SetValueKey","HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\EnableSPDY3_0"',
                 '"C:\Windows\System32\dwm.exe","SetValueKey","HKCU\Software\Microsoft\Nylaiw\Fauzwua"',
                 '"C:\Program Files\Windows Mail\WinMail.exe","Write","C:\Users\mp\AppData\Local\Microsoft\Windows Mail\WindowsMail.pat"',
                 '"C:\Program Files\Windows Mail\WinMail.exe","Write","C:\Users\mp\AppData\Local\Microsoft\Windows Mail\Backup\\temp\edb00002.log"',
@@ -290,8 +290,8 @@ class mailvir:
                 '"C:\CaptureLoader\CaptureClientLoader.exe","DeleteValueKey","HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\IntranetName"',
                 '"C:\CaptureLoader\CaptureClientLoader.exe","SetValueKey","HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\UNCAsIntranet"',
                 '"C:\CaptureLoader\CaptureClientLoader.exe","SetValueKey","HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\AutoDetect"',
-                #'"C:\CaptureLoader\CaptureClientLoader.exe","SetValueKey","HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\WarnonBadCertRecving"',
-                #'"C:\CaptureLoader\CaptureClientLoader.exe","SetValueKey","HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\EnableSPDY3_0"',
+                '"C:\CaptureLoader\CaptureClientLoader.exe","SetValueKey","HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\WarnonBadCertRecving"',
+                '"C:\CaptureLoader\CaptureClientLoader.exe","SetValueKey","HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\EnableSPDY3_0"',
                 '"C:\CaptureLoader\CaptureClientLoader.exe","SetValueKey","HKCU\Software\Microsoft\Nylaiw\Fauzwua"',
                 '"C:\Program Files\Windows Mail\WinMail.exe","SetValueKey","HKCU\Software\Microsoft\Windows Mail\V7StoreMigDone"',
                 '"C:\Program Files\Windows Mail\WinMail.exe","DeleteValueKey","HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\ProxyBypass"',
@@ -306,8 +306,8 @@ class mailvir:
                 '"C:\Program Files\Windows Mail\WinMail.exe","DeleteValueKey","HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\IntranetName"',
                 '"C:\Program Files\Windows Mail\WinMail.exe","SetValueKey","HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\UNCAsIntranet"',
                 '"C:\Program Files\Windows Mail\WinMail.exe","SetValueKey","HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\AutoDetect"',
-                #'"C:\Program Files\Windows Mail\WinMail.exe","SetValueKey","HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\WarnonBadCertRecving"',
-                #'"C:\Program Files\Windows Mail\WinMail.exe","SetValueKey","HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\EnableSPDY3_0"',
+                '"C:\Program Files\Windows Mail\WinMail.exe","SetValueKey","HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\WarnonBadCertRecving"',
+                '"C:\Program Files\Windows Mail\WinMail.exe","SetValueKey","HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\EnableSPDY3_0"',
                 '"C:\Program Files\Windows Mail\WinMail.exe","SetValueKey","HKCU\Software\Microsoft\Nylaiw\Fauzwua"',
                 '"C:\Program Files\Windows Mail\WinMail.exe","Write","C:\Users\mp\AppData\Local\Microsoft\Windows Mail\edb.log"',
                 '"C:\Program Files\Windows Mail\WinMail.exe","Write","C:\Users\mp\AppData\Local\Microsoft\Windows Mail\WindowsMail.MSMessageStore"',
@@ -375,7 +375,7 @@ class mailvir:
                 '"C:\Program Files\Windows Mail\WinMail.exe","Write","C:\Users\mp\AppData\Local\Temp\TarF8F.tmp"',
                 '"C:\Program Files\Windows Mail\WinMail.exe","Delete","C:\Users\mp\AppData\Local\Temp\CabF8E.tmp"',
                 '"C:\Program Files\Windows Mail\WinMail.exe","Delete","C:\Users\mp\AppData\Local\Temp\TarF8F.tmp"',
-                #'"C:\Program Files\Windows Mail\WinMail.exe","Write","C:\Users\mp\AppData\Local\Microsoft\Windows Mail\Local Folders\Inbox\\4F8B02F0-00000001.eml:OECustomProperty"',
+                '"C:\Program Files\Windows Mail\WinMail.exe","Write","C:\Users\mp\AppData\Local\Microsoft\Windows Mail\Local Folders\Inbox\\4F8B02F0-00000001.eml:OECustomProperty"',
                 '"C:\Program Files\Windows Mail\WinMail.exe","Write","C:\Users\mp\AppData\Local\Temp\ppcrlui_3164_2"',
                 '"C:\Program Files\Windows Mail\WinMail.exe","Delete","C:\Users\mp\AppData\Local\Temp\ppcrlui_3164_2.ui"',
                 '"C:\Program Files\Windows Mail\WinMail.exe","Delete","C:\Users\mp\AppData\Local\Temp\ppcrlui_3164_2"',
@@ -421,9 +421,13 @@ class mailvir:
            # print self.outbuff[0]
             for i in range(0, len(self.outbuff)):
                 if i < len(self.origorder):
+                    if self.origorder[i] != self.outbuff[i]:
+                        self.outbuff.insert(i, "0")
+            for i in range(0, len(self.outbuff)):
+                if i < len(self.origorder):
                     #print "comparing " + self.outbuff[i] + " and " + self.origorder[i]
                     if self.outbuff[i] == self.origorder[i]:
-                        #print "match"
+                    #    print "match"
                         accscore += 1
                     else:
                         pass
@@ -433,4 +437,5 @@ class mailvir:
             return 0
         else:
             self.accuracy = accscore / len(self.origorder) * 100
+            #print self.accuracy
         return self.accuracy
