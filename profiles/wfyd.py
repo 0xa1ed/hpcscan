@@ -50,7 +50,7 @@ class wfyd:
         self.filedel = ['C:\Users\mp\Desktop\currently supported']
         self.score = 0
         self.accuracy = 0.0
-        self.origorder = [#'"C:\Program Files\Internet Explorer\iexplore.exe","SetValueKey","HKCU\Software\Microsoft\Internet Explorer\LowRegistry\ErrorReporting\LastShipAssertTime"',
+        self.origorder = ['"C:\Program Files\Internet Explorer\iexplore.exe","SetValueKey","HKCU\Software\Microsoft\Internet Explorer\LowRegistry\ErrorReporting\LastShipAssertTime"',
                 '"C:\Program Files\Internet Explorer\iexplore.exe","Write","C:\Users\mp\AppData\Local\Temp\wfyd.dll"',
                 '"C:\Program Files\Internet Explorer\iexplore.exe","created","2980","C:\Users\mp\AppData\Local\Temp\wfyd.dll"',
                 '"C:\Users\mp\AppData\Local\Temp\wfyd.dll","created","2992","C:\Users\mp\AppData\Local\Temp\wfyd.dll"',
