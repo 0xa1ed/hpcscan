@@ -28,6 +28,7 @@ def endwrite():
         outfile.write(line)
 
     outfile.close()
+    print "Saved log in: %s" % (outname)
 
 def interwrite(prof):
     if 'flashcache' in str(prof):
