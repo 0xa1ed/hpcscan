@@ -28,7 +28,7 @@ def interwrite(prof):
     else:
         timestamp = str(time.strftime("%d%m%Y"))
         global outname
-        outname = timestamp + 'outfile.txt' 
+        outname = 'out' + timestamp + '.txt' 
         if not os.path.exists(outname):
             outfile = open(outname, "w")
             for key, val in scores.iteritems():
@@ -58,7 +58,6 @@ def interwrite(prof):
                     outfile.write("\n\n")
                     outfile.close()
 
-
 def save():
     t_score = 0
     t_prof = ''
@@ -76,6 +75,7 @@ def save():
                 interwrite(t_profraw)
             else:
                 scores['unidentified'] += 1
+
 def reset():
     for prof in profs:
         prof.score = 0

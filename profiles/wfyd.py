@@ -126,9 +126,13 @@ class wfyd:
            # print self.outbuff[0]
             for i in range(0, len(self.outbuff)):
                 if i < len(self.origorder):
-                #    print "comparing " + self.outbuff[i] + " and " + self.origorder[i]
+                    if self.origorder[i] != self.outbuff[i]:
+                        self.outbuff.insert(i, "0")
+            for i in range(0, len(self.outbuff)):
+                if i < len(self.origorder):
+                    #print "comparing " + self.outbuff[i] + " and " + self.origorder[i]
                     if self.outbuff[i] == self.origorder[i]:
-                 #       print "match"
+                    #    print "match"
                         accscore += 1
                     else:
                         pass
@@ -138,4 +142,5 @@ class wfyd:
             return 0
         else:
             self.accuracy = accscore / len(self.origorder) * 100
+            #print self.accuracy
         return self.accuracy
