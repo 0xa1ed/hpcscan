@@ -4,7 +4,14 @@
 # Description: An utility to look at Capture-HPC logs and determine if a particular set of logs
 #              displays malicious actions by comparing it to profiles of logs already determined
 #              to be malicious. This is under active development and is not for production use yet. 
-import os, sys, subprocess, getopt, profiles, csv, time
+import os
+import sys
+import subprocess
+import getopt
+import profiles
+import csv
+import time
+
 
 def endwrite():
     outfile = open(outname, "r")
