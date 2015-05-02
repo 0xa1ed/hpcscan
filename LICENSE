@@ -28,7 +28,6 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 ---------------------------------------------------------------------------------
 
 The following files:
-    - install.sh
     - upgrade.sh
 are adapted from Robby Russell's oh-my-zsh project, and as such are covered by the
 following license:
