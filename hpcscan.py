@@ -182,8 +182,8 @@ def usage():
     print "\t-u (--update):\t\t\t\t updates the application from github repo"
     print "\t-f <filename> (--file <filename>):\t specifies the file to be analysed"
     print "\t-h (--help):\t\t\t\t displays this usage dialog\n\n"
-    print "If you are receiving results that seem wildly inaccurate, check to see if\n"
-    print "your logs are split into distinct blocks. A lack of split logs causes problems\n"
+    print "If you are receiving results that seem wildly inaccurate, check to see if"
+    print "your logs are split into distinct blocks. A lack of split logs causes problems"
     print "for hpcscan. You can split your logs by passing your logfile to splitlog.py"
     
 def update():
